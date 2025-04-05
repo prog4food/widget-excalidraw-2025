@@ -1,71 +1,34 @@
 {
-  "name": "widget-excalidraw",
-  "version": "0.1.2",
-  "homepage": "/widgets/widget-excalidraw/",
+  "name": "widget-excalidraw-2025",
   "private": true,
-  "dependencies": {
-    "@excalidraw/excalidraw": "^0.17",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.1.0",
-    "@testing-library/user-event": "^14.5.2",
-    "@types/jest": "^29.5.14",
-    "@types/node": "^22.10.2",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
-    "clsx": "^2.1.1",
-    "lodash": "^4.17.21",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
-    "typescript": "^5.8.3",
-    "web-vitals": "^4.2.4"
-  },
-  "overrides": {
-    "react-scripts": {
-      "typescript": "^5"
-    }
-  },
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "release": "sh scripts/release.sh",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/lodash": "^4.17.13",
-    "@typescript-eslint/eslint-plugin": "^6",
-    "@typescript-eslint/parser": "^6",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^8.57.1",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-config-standard-with-typescript": "^43.0.1",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-n": "^15.7.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-promise": "^6.6.0",
-    "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "http-proxy-middleware": "^3.0.3",
-    "prettier": "^3.4.2"
+    "@eslint/js": "^9.21.0",
+    "@excalidraw/excalidraw": "^0.18.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "lodash-es": "^4.17.21",
+    "rollup-plugin-visualizer": "^5.14.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0",
+    "web-vitals": "^4.2.4"
   }
 }

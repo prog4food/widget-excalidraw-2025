@@ -1,7 +1,7 @@
 // 获取内容块ID
 import { loadFromBlob, MIME_TYPES } from "@excalidraw/excalidraw";
-import { RestoredDataState } from "@excalidraw/excalidraw/types/data/restore";
-import { Theme } from "@excalidraw/excalidraw/types/element/types";
+import { RestoredDataState } from "@excalidraw/excalidraw/data/restore";
+import { Theme } from "@excalidraw/excalidraw/element/types";
 
 export function getBlockId(): string | null {
   return getBlockIdFromUrl() || getBlockIdFromParentDom();
@@ -118,6 +118,16 @@ export function removeFile(path: string): Promise<any> {
   });
 }
 
+// Raed siyuan config via API
+export function getConf(): Promise<any> {
+  return fetch("/api/system/getConf", {
+    method: "POST",
+    body: JSON.stringify({}),
+  }).then((response) => {
+    return response.json();
+  });
+}
+
 // 上传资源文件
 export function assetsUpload(
   base64Encoded: boolean,
@@ -139,7 +149,7 @@ export function assetsUpload(
   const file = new File([blob], filename, { lastModified: Date.now() });
 
   const formdata = new FormData();
-  formdata.append("assetsDirPath", "/assets/widget-excalidraw/");
+  formdata.append("assetsDirPath", "/assets/widget-excalidraw-2025/");
   formdata.append("file[]", file);
 
   return fetch("/api/asset/upload", {

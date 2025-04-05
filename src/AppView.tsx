@@ -12,7 +12,7 @@ function App() {
   };
 
   const openEditWindow = () => {
-    window.open("/widgets/widget-excalidraw/?id=" + blockId);
+    window.open("/widgets/widget-excalidraw-2025/?id=" + blockId);
   };
 
   // 在组件挂载之前初始化变量

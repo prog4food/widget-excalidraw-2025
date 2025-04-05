@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import {
   Excalidraw,
@@ -7,12 +7,13 @@ import {
   THEME,
   WelcomeScreen,
 } from "@excalidraw/excalidraw";
+import "@excalidraw/excalidraw/index.css";
 import {
   AppState,
   BinaryFiles,
   ExcalidrawImperativeAPI,
   ExcalidrawInitialDataState,
-} from "@excalidraw/excalidraw/types/types";
+} from "@excalidraw/excalidraw/types";
 import * as siyuan from "./utils/siyuan";
 import { serializeSVGToString } from "./utils/utils";
 import {
@@ -21,8 +22,8 @@ import {
   unsyncOffIcon,
   syncIcon,
 } from "./utils/icons";
-import { ExcalidrawElement, Theme } from "@excalidraw/excalidraw/types/element/types";
-import { debounce } from "lodash";
+import { ExcalidrawElement, Theme } from "@excalidraw/excalidraw/element/types";
+import { debounce } from "lodash-es";
 
 function App() {
   const blockId = siyuan.getBlockId();
@@ -33,6 +34,7 @@ function App() {
   const [exportBackground, setExportBackground] = useState<boolean>(true);
   const [initData, setInitData] = useState<ExcalidrawInitialDataState>();
   const [autoSave, setAutoSave] = useState<boolean>(true);
+  const [langCode, setLangCode] = useState<string>('en_US');
 
   useEffect(() => {
     if (blockId) {
@@ -43,6 +45,10 @@ function App() {
           const url = '/check-auth?to=' + encodeURIComponent(pathname + search);
           window.location.href=url;
         }
+      });
+
+      siyuan.getConf().then((reply) => {
+        setLangCode(reply?.data?.conf?.lang.replace('_', '-'));
       });
 
       // 初始化配置项
@@ -144,9 +150,11 @@ function App() {
   };
 
   const handleOnChange = (
+    // @ts-ignore
     elements: readonly ExcalidrawElement[],
     appState: AppState,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // @ts-ignore
     files: BinaryFiles
   ) => {
     setTheme(appState.theme);
@@ -175,7 +183,7 @@ function App() {
           <Excalidraw
             excalidrawAPI={(api: ExcalidrawImperativeAPI) => setExcalidrawAPI(api)}
             initialData={initData}
-            langCode={"ru-RU"}
+            langCode={langCode}
             autoFocus
             handleKeyboardGlobally
             renderTopRightUI={renderTopRightUI}
@@ -194,6 +202,7 @@ function App() {
               <MainMenu.DefaultItems.SaveAsImage />
               <MainMenu.DefaultItems.Export />
               <MainMenu.DefaultItems.ClearCanvas />
+              <MainMenu.DefaultItems.SearchMenu />
               <MainMenu.DefaultItems.Help />
               <MainMenu.Separator />
               <MainMenu.DefaultItems.ToggleTheme />
