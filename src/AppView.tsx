@@ -30,10 +30,10 @@ function App() {
         style={{ display: isHovered ? "block" : "none" }}
       >
         <button className="generic-btn" onClick={reloadSvg}>
-          刷新
+          Reload SVG
         </button>
         <button className="generic-btn" onClick={openEditWindow}>
-          编辑
+          Edit
         </button>
       </div>
       <div dangerouslySetInnerHTML={{ __html: svg }} />

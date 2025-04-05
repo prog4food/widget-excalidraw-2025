@@ -1,6 +1,7 @@
 // 获取内容块ID
 import { loadFromBlob, MIME_TYPES } from "@excalidraw/excalidraw";
 import { RestoredDataState } from "@excalidraw/excalidraw/types/data/restore";
+import { Theme } from "@excalidraw/excalidraw/types/element/types";
 
 export function getBlockId(): string | null {
   return getBlockIdFromUrl() || getBlockIdFromParentDom();
@@ -175,5 +176,5 @@ export declare type BlockAttrs = {
 export declare type Options = {
   gridModeEnabled: boolean;
   exportBackground: boolean;
-  theme: string;
+  theme: Theme;
 };
