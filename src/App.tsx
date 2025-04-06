@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import {
   Excalidraw,
   exportToSvg,
@@ -178,7 +177,6 @@ function App() {
 
   return (
     <>
-      <div style={{ height: "100vh" }}>
         {initData && (
           <Excalidraw
             excalidrawAPI={(api: ExcalidrawImperativeAPI) => setExcalidrawAPI(api)}
@@ -230,7 +228,6 @@ function App() {
             <WelcomeScreen />
           </Excalidraw>
         )}
-      </div>
     </>
   );
 }
