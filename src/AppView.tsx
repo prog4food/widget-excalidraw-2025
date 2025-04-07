@@ -36,7 +36,7 @@ function App() {
           Edit
         </button>
       </div>
-      <div dangerouslySetInnerHTML={{ __html: svg }} />
+      <div style={{ height: '100%', width: '100%' }} dangerouslySetInnerHTML={{ __html: svg }} />
     </div>
   );
 }
