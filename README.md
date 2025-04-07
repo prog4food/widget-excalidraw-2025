@@ -7,7 +7,7 @@ Unfortunately, it is entirely in Chinese and has not been maintained or updated 
 **[Important]** This widget has a new id `widget-excalidraw-2025`, and drawings created by `widget-excalidraw` are compatible but need to be migrated.  
 Read [this guide](./public/MIGRATION.md)
 
-![preview](./public/preview.png)
+![preview](./preview.png)
 
 ## RU
 Это обновленная версия виджета, позволяющего рисовать [excalidraw](https://docs.excalidraw.com/) схемы для [SiYuan](https://github.com/siyuan-note/siyuan)

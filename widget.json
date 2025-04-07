@@ -2,12 +2,12 @@
     "name": "widget-excalidraw-2025",
     "author": "prog4food, ooooooook",
     "url": "https://github.com/prog4food/widget-excalidraw-2025",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "displayName": {
-        "default": "excalidraw-2025"
+        "default": "Excalidraw-2025"
     },
     "description": {
-        "default": "excalidraw widget，with SVG preview/export"
+        "default": "Excalidraw widget with SVG preview/export"
     },
     "readme": {
         "default": "README.md"
